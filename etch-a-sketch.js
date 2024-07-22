@@ -12,22 +12,14 @@ function drawGrid() {
 
 drawGrid();
 
-function divHoverInHandler(event) {
+function divHoverHandler(event) {
   const el = event.target;
   if (el.classList.contains("gridDiv")) {
     el.style.backgroundColor = "grey";
   }
 }
 
-function divHoverOutHandler(event) {
-  const el = event.target;
-  if (el.classList.contains("gridDiv")) {
-    el.style.backgroundColor = "white";
-  }
-}
-
-container.addEventListener("mouseover", divHoverInHandler);
-container.addEventListener("mouseout", divHoverOutHandler);
+container.addEventListener("mouseover", divHoverHandler);
 
 const gridDensityPrompt = document.querySelector("#prompt");
 gridDensityPrompt.addEventListener("click", setGridDensity);
