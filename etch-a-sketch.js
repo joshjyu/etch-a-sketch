@@ -1,10 +1,12 @@
 const container = document.querySelector(".container");
 const gridDensityPrompt = document.querySelector("#prompt");
+const gridClear = document.querySelector("#clear");
 let gridLength = 16;
 
 container.addEventListener("mousedown", etchEventHandler);
 container.addEventListener("mouseover", etchEventHandler);
 gridDensityPrompt.addEventListener("click", setGridDensity);
+gridClear.addEventListener("click", clearGrid);
 
 let isMouseDown = false;
 document.body.onmousedown = () => (isMouseDown = true);
@@ -21,7 +23,7 @@ function drawGrid() {
 
 function etchEventHandler(event) {
   if (event.type === "mouseover" && !isMouseDown) return;
-  
+
   const el = event.target;
   const red = Math.floor(Math.random() * 256);
   const green = Math.floor(Math.random() * 256);
@@ -49,6 +51,16 @@ function setGridDensity() {
   }
 
   drawGrid();
+}
+
+function clearGrid() {
+  const gridSquares = document.querySelectorAll(".gridDiv");
+  for (let i = 0; i < gridSquares.length; i++) {
+    gridSquares[i].setAttribute(
+      "style",
+      `flex: 0 1 ${100 / gridLength}%; background-color: white;`,
+    );
+  }
 }
 
 drawGrid();
