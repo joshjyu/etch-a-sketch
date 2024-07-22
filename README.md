@@ -8,4 +8,4 @@ This was made as an assignment for [The Odin Project](https://www.theodinproject
 
 ## Links
 
-Link to project will go here
+[Link to etch-a-sketch page](https://joshjyu.github.io/etch-a-sketch/)
