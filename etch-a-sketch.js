@@ -1,5 +1,14 @@
 const container = document.querySelector(".container");
+const gridDensityPrompt = document.querySelector("#prompt");
 let gridLength = 16;
+
+container.addEventListener("mousedown", etchEventHandler);
+container.addEventListener("mouseover", etchEventHandler);
+gridDensityPrompt.addEventListener("click", setGridDensity);
+
+let isMouseDown = false;
+document.body.onmousedown = () => (isMouseDown = true);
+document.body.onmouseup = () => (isMouseDown = false);
 
 function drawGrid() {
   for (let i = 0; i < Math.pow(gridLength, 2); i++) {
@@ -10,22 +19,18 @@ function drawGrid() {
   }
 }
 
-drawGrid();
-
-function divHoverHandler(event) {
+function etchEventHandler(event) {
+  if (event.type === "mouseover" && !isMouseDown) return;
+  
   const el = event.target;
   const red = Math.floor(Math.random() * 256);
   const green = Math.floor(Math.random() * 256);
   const blue = Math.floor(Math.random() * 256);
+
   if (el.classList.contains("gridDiv")) {
     el.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
   }
 }
-
-container.addEventListener("mouseover", divHoverHandler);
-
-const gridDensityPrompt = document.querySelector("#prompt");
-gridDensityPrompt.addEventListener("click", setGridDensity);
 
 function setGridDensity() {
   gridLength = prompt(
@@ -45,3 +50,5 @@ function setGridDensity() {
 
   drawGrid();
 }
+
+drawGrid();

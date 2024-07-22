@@ -1,24 +1,20 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    gap: 25px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 25px;
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    height: 95vh;
-    aspect-ratio: 1 / 1;
-    border: 2px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  height: 95vh;
+  aspect-ratio: 1 / 1;
+  border: 2px solid black;
 }
 
 .gridDiv {
-    /* flex values are dynamically defined in the Javascript file */
-    width: 5px;
-    aspect-ratio: 1 / 1;
+  /* flex values are dynamically defined in the Javascript file */
+  width: 5px;
+  aspect-ratio: 1 / 1;
 }
