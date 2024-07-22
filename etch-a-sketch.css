@@ -6,18 +6,19 @@ body {
     display: flex;
     justify-content: center;
     align-content: center;
+    gap: 25px;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-    height: 100vh - 25px;
+    height: 95vh;
     aspect-ratio: 1 / 1;
+    border: 2px solid black;
 }
 
 .gridDiv {
+    /* flex values are dynamically defined in the Javascript file */
     width: 5px;
     aspect-ratio: 1 / 1;
-    flex: 0 1 6.25%;
-    border: 1px solid black;
 }
