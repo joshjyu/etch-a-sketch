@@ -3,12 +3,13 @@ body {
   justify-content: center;
   align-content: center;
   gap: 25px;
+  background-color: rgb(140, 171, 168, 0.5);
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
-  height: 75vh;
+  height: 50vh;
   aspect-ratio: 1 / 1;
   border: 2px solid black;
 }
