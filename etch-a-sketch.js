@@ -9,8 +9,16 @@ gridDensityPrompt.addEventListener("click", setGridDensity);
 gridClear.addEventListener("click", clearGrid);
 
 let isMouseDown = false;
-document.body.onmousedown = () => (isMouseDown = true);
-document.body.onmouseup = () => (isMouseDown = false);
+document.body.addEventListener("mousedown", (event) => {
+  if (event.button == 0) {
+    isMouseDown = true;
+  }
+});
+document.body.addEventListener("mouseup", (event) => {
+  if (event.button == 0) {
+    isMouseDown = false;
+  }
+});
 
 function drawGrid() {
   for (let i = 0; i < Math.pow(gridLength, 2); i++) {
@@ -23,7 +31,8 @@ function drawGrid() {
 
 function etchEventHandler(event) {
   if (event.type === "mouseover" && !isMouseDown) return;
-
+  if (event.button > 0) return;
+  
   const el = event.target;
   const red = Math.floor(Math.random() * 256);
   const green = Math.floor(Math.random() * 256);
