@@ -1,8 +1,8 @@
-# Etch-a-Sketch - a Javascript Project
+# Etch-a-Sketch - a JavaScript Project
 
 ## About
 
-A primitive browser version of Etch-a-Sketch to practice Javascript.
+A primitive browser version of Etch-a-Sketch to practice JavaScript.
 
 This was made as an assignment for [The Odin Project](https://www.theodinproject.com).
 
